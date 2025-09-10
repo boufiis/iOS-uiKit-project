@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,26 +13,79 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhetherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WA-gJ-7xe">
-                                <rect key="frame" x="125" y="259" width="75" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sunnyWhether" translatesAutoresizingMaskIntoConstraints="NO" id="IQO-cU-GHw">
+                                <rect key="frame" x="88" y="188" width="226" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="bvO-pc-KF6"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-zB-J0x">
+                                <rect key="frame" x="93.666666666666686" y="342" width="215" height="35.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAOUNATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-4K-aQI">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="35.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7mO-7g-M4Y">
+                                        <rect key="frame" x="165.33333333333331" y="0.0" width="49.666666666666657" height="35.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnu-AP-jRm">
+                                                <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="35.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vM-fu-99o">
+                                                <rect key="frame" x="35.333333333333314" y="0.0" width="14.333333333333336" height="35.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Tap here something..." translatesAutoresizingMaskIntoConstraints="NO" id="fe9-a3-ibl">
+                                <rect key="frame" x="15" y="62" width="372" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vTQ-el-eOD"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IQO-cU-GHw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ZU-k0-2Q7"/>
+                            <constraint firstItem="bXJ-zB-J0x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8da-Z7-zGz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IQO-cU-GHw" secondAttribute="trailing" constant="88" id="LQO-Wl-mIF"/>
+                            <constraint firstItem="IQO-cU-GHw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="THP-ub-gKy"/>
+                            <constraint firstItem="fe9-a3-ibl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UpQ-ZS-cIZ"/>
+                            <constraint firstItem="bXJ-zB-J0x" firstAttribute="top" secondItem="IQO-cU-GHw" secondAttribute="bottom" constant="26" id="WlG-52-6Kw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fe9-a3-ibl" secondAttribute="trailing" constant="15" id="aLA-fP-UNW"/>
+                            <constraint firstItem="IQO-cU-GHw" firstAttribute="top" secondItem="fe9-a3-ibl" secondAttribute="bottom" constant="70" id="bx6-1V-ItI"/>
+                            <constraint firstItem="fe9-a3-ibl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zpT-LD-Wca"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SearchBar" destination="fe9-a3-ibl" id="i4N-1u-add"/>
+                        <outlet property="cityName" destination="3Tl-4K-aQI" id="BgL-O8-W5s"/>
+                        <outlet property="wheatherDegree" destination="Fnu-AP-jRm" id="5vq-uP-byz"/>
+                        <outlet property="whetherImage" destination="IQO-cU-GHw" id="sz5-v3-iwI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="4"/>
+            <point key="canvasLocation" x="60.869565217391312" y="3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_sunnyWhether" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
