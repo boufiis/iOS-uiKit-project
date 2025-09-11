@@ -53,6 +53,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         reverseGeoLocation(location)
+        manager.stopUpdatingLocation()
     }
     
     func showError(_ error: Error) {
